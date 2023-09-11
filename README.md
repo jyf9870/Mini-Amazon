@@ -1,6 +1,6 @@
 # ECE568 Final Project - Amazon
 
-## Authors: Oliver Chen (yc557), Yifan Jiang (yj193) 
+## Authors: Yifan Jiang (yj193), Oliver Chen (yc557) 
 
 ## Notes to create local postgres database
 ```bash
