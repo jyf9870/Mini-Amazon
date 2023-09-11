@@ -1,0 +1,8 @@
+1. Attractive UI
+We have designed an attractive user interface for our web page, leveraging the power of CSS, JavaScript, and HTML. Our goal was to create a visually pleasing experience for our users while keeping the interactions simple and user-friendly. To achieve this, we followed various UI/UX principles, such as the similarity principle in our buttons and navigation bar. We also implemented the focal point principle to ensure that the user is aware of their actions on the web page.
+
+2. Email notification to users
+We have implemented an email notification system to keep our users informed about their orders. After a successful order placement, an email will be sent to the user's email address notifying them.
+
+3. Search
+To make it easy for our users to find the products they want, we have integrated a search function on the page. This function can be accessed through the search bar located above the navigation bar. Users can enter product categories to quickly find what they are looking for.

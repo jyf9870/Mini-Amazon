@@ -1,0 +1,13 @@
+1. To keep track of sent messages, we use a dictionary with the message sequence as the key and the sent message as the value. When we receive an acknowledgement, we remove the message from the dictionary. If an acknowledgment is not received, we will resend the message every second. For received messages, we use a set to ensure that we only process messages that are not already in the set. If a message is processed, we add its sequence to the set.
+
+
+2. In the communication module, we utilize two threads for UPS and the world. One thread handles receiving information, while the other handles resending information. Since Python's data structures are thread-safe, we believe we have completely prevented any potential race conditions.
+
+
+3. Our object-oriented design reduces code redundancy and the likelihood of errors. UPS and the world inherit from the base class, which is responsible for decoding and encoding.
+
+
+4. We perform input validation after each user input to ensure its correctness and availability. Any invalid inputs are rejected, and the user is notified.
+
+
+5. To ensure the security of our website and data, only authorized users can access our platform. We maintain a high level of security to prevent unauthorized access and maintain the integrity of our system.
