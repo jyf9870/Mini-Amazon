@@ -1,0 +1,41 @@
+version: '2'
+
+services:
+  db:
+      image: postgres
+      environment:
+        - POSTGRES_DB=projectDB
+        - POSTGRES_USER=yc557
+        - POSTGRES_PASSWORD=Oliver666
+      volumes:
+            - data-volume:/var/lib/postgresql/data
+  web-init:
+      build: ./web_app
+      command: bash -c "/code/initserver.sh && python3 mini_amazon/db_setup.py"
+      volumes:
+        - ./web_app:/code
+      depends_on:
+        - db
+  web:
+      build: ./web_app
+      user: nobody
+      command: /code/runserver.sh
+      volumes:
+        - ./web_app:/code
+      expose:
+        - "8000"
+        - "54321"
+      ports:
+        - "54321:54321"
+      depends_on:
+        - web-init
+  nginx:
+     image: nginx:latest
+     ports:
+       - "8000:8000"
+     volumes:
+       - ./nginx/config:/etc/nginx/conf.d
+     depends_on:
+       - web
+volumes:
+   data-volume: 

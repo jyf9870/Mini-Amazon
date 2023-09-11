@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="bg-light py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mb-0"><a href="/index"><span class="text-success">Home</span></a> <span class="mx-2 mb-0">/</span> <a href="/shop"><span class="text-success">Shop</span></a>
+        <span class="mx-2 mb-0">/</span> <strong class="text-black">Checkout</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container">
+
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <div class="border p-4 rounded" role="alert">
+          {{msg}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-5 mb-md-0">
+        <h2 class="h3 mb-3 text-black">Order Details</h2>
+        <div class="p-3 p-lg-5 border">
+
+          <form action="/thankyou/" method="post" class="text-black"> {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Place Order" class="btn btn-success btn-lg py-3 btn-block" />
+          </form>
+
+        </div>
+      </div>
+    </div>
+    <!-- </form> -->
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="text-align: center;">
+    <p>Do not have account yet? <a href = "/accounts/register/"><span class="text-success">Signup</span></a></p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Login" class="btn btn-success" />
+</form>
+</div>
+<br />
+{% endblock %}
